@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping(value = "/member")
-public class MemberController {
-    @RequestMapping(value = { "/edit", "/read", "/list" }, method = { RequestMethod.GET, RequestMethod.POST })
-    public void actionMethod() {
+@RequestMapping(value = "/commonCode")
+public class CommonCodeController {
+    @RequestMapping(value = "/edit", method = { RequestMethod.GET, RequestMethod.POST })
+    public void edit() {
     }
 }
