@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping(value = "/member")
 public class MemberController {
-    @RequestMapping(value = { "/edit", "/read", "/list" }, method = { RequestMethod.GET, RequestMethod.POST })
+    @RequestMapping(value = { "/login", "/logout", "/signup" }, method = { RequestMethod.GET, RequestMethod.POST })
     public void actionMethod() {
     }
 }
