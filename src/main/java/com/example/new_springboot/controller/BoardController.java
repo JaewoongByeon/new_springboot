@@ -4,8 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class MemberController {
-    @RequestMapping(value = "/member/*")
-    public void memberAction() {
+public class BoardController {
+    @RequestMapping(value = "/board/*")
+    private void actionMethod() {
     }
 }
