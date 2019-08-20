@@ -17,7 +17,7 @@ public class MemberController {
 
     @RequestMapping(value = "/view")
     public ModelAndView read(@RequestParam Map<String, Object> paramMap, ModelAndView modelAndView) {
-        String viewName = "member/view";
+        String viewName = "/member/view";
         modelAndView.setViewName(viewName);
         modelAndView.addObject("paramMap", paramMap);
         return modelAndView;
