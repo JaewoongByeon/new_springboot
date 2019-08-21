@@ -19,6 +19,7 @@ public class CommonCodeController {
     public void actionMethod() {
     }
 
+    @SuppressWarnings("unchecked")
     @RequestMapping(value = "/{action}", method = { RequestMethod.GET, RequestMethod.POST })
     public ModelAndView edit(@RequestParam Map<String, Object> paramMap, @PathVariable String action,
             ModelAndView modelandView) {

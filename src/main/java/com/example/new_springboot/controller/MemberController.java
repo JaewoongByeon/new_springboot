@@ -31,6 +31,7 @@ public class MemberController {
     @Autowired
     private MemberService service;
 
+    @SuppressWarnings("unchecked")
     @RequestMapping(value = "/{action}", method = { RequestMethod.GET, RequestMethod.POST })
     public ModelAndView actionMethod(@RequestParam Map<String, Object> paramMap, @PathVariable String action,
             ModelAndView modelandView) {
