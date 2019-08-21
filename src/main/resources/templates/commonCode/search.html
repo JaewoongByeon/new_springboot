@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html xmlns:th="https://thymeleaf.org/">
+<html lang="ko" xmlns:th="https://thymeleaf.org/">
 
 <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <link rel="stylesheet" href="../../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}">
     <script src="../../static/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
 
@@ -9,36 +10,36 @@
 
 <body>
     <div class="container p-2">
+        <h2>회원검색</h2>
         <form action="./search.html" th:action="@{/commonCode/search}">
             <div class="form-group">
                 <div class="form-inline">
                     <input type="text" class="form-control m-1" name="QUERY" placeholder="검색어"
                         th:value="${resultList1.QUERY}">
                     <select class="custom-select m-1" name="RULE">
-                        <option th:if="${resultList1.RULE}==0" value="0" selected>제목</option>
-                        <option th:unless="${resultList1.RULE}==0" value="0">제목</option>
-                        <option th:if="${resultList1.RULE}==1" value="1" selected>내용</option>
-                        <option th:unless="${resultList1.RULE}==1" value="1">내용</option>
-                        <option th:if="${resultList1.RULE}==2" value="2" selected>글쓴이</option>
-                        <option th:unless="${resultList1.RULE}==2" value="2">글쓴이</option>
+                        <option th:if="${resultList1.RULE}==0" value="0" selected>이름</option>
+                        <option th:unless="${resultList1.RULE}==0" value="0">이름</option>
+                        <option th:if="${resultList1.RULE}==1" value="1" selected>아이디</option>
+                        <option th:unless="${resultList1.RULE}==1" value="1">아이디</option>
+                        <option th:if="${resultList1.RULE}==2" value="2" selected>설명</option>
+                        <option th:unless="${resultList1.RULE}==2" value="2">설명</option>
                     </select>
                     <button type="submit" class="btn btn-outline-dark m-1">검색</button>
-
                 </div>
             </div>
         </form>
         <p>
-            <span th:if="${resultList1.RULE}==0">제목에 </span>
-            <span th:if="${resultList1.RULE}==1">내용에 </span>
-            <span th:if="${resultList1.RULE}==2">글쓴이에 </span>
-            검색어 "<span th:text="${resultList1.QUERY}"></span>"를 포함한 글
+            <span th:if="${resultList1.RULE}==0">이름에 </span>
+            <span th:if="${resultList1.RULE}==1">아이디에 </span>
+            <span th:if="${resultList1.RULE}==2">설명에 </span>
+            검색어 "<span th:text="${resultList1.QUERY}"></span>"를 포함한 회원
         </p>
         <table class="table">
             <thead>
                 <tr>
-                    <th>Code</th>
-                    <th>Name</th>
-                    <th>Description</th>
+                    <th>아이디</th>
+                    <th>이름</th>
+                    <th>설명</th>
                 </tr>
             </thead>
             <tbody>
