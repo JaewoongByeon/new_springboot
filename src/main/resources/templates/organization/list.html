@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="https://thymeleaf.org/">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" href="../../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}">
+    <script src="../../static/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+
+</head>
+
+<body>
+    <div class="container p-2">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ORGANIZATION_SEQ</th>
+                    <th>NAME</th>
+                    <th>TELEPHONE</th>
+                    <th>ORDER_NUMBER</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="resultData: ${resultList}">
+                    <td th:text="${resultData.ORGANIZATION_SEQ}"></td>
+                    <td th:text="${resultData.NAME}"></td>
+                    <td th:text="${resultData.TELEPHONE}"></td>
+                    <td th:text="${resultData.ORDER_NUMBER}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
