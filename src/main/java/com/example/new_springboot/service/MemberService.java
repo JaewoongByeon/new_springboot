@@ -1,16 +1,22 @@
 package com.example.new_springboot.service;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.example.new_springboot.dao.MemberDao;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class MemberService {
+    @Autowired
+    private MemberDao dao;
+
     public Object getObject(Object dataMap) {
-        Map<String, Object> resultObject = new HashMap<String, Object>();
-        resultObject.put("MEMBER_ID", "293023901202");
-        resultObject.put("NAME", "name 02");
+        Object resultObject = dao.getObject(dataMap);
         return resultObject;
+    }
+
+    public Object getList(Object dataMap) {
+        Object resultList = dao.getList(dataMap);
+        return resultList;
     }
 }

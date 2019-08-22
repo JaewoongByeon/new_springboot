@@ -1,6 +1,8 @@
 package com.example.new_springboot.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.example.new_springboot.service.MemberService;
@@ -37,11 +39,14 @@ public class MemberController {
             ModelAndView modelandView) {
         String viewName = "/member/";
         Map<String, Object> resultMap = new HashMap<String, Object>();
+        List<Object> resultList = new ArrayList<Object>();
         if ("read".equals(action)) {
             viewName = viewName + action;
             resultMap = (Map<String, Object>) service.getObject(paramMap);
+            resultList = (List<Object>) service.getList(paramMap);
             modelandView.setViewName(viewName);
             modelandView.addObject("resultMap", resultMap);
+            modelandView.addObject("resultList", resultList);
         }
         return modelandView;
     }

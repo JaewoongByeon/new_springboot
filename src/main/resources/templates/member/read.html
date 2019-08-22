@@ -10,6 +10,7 @@
 
 <body>
     <div class="container p-2">
+        <h2>Map</h2>
         <table class="table">
             <thead>
                 <tr>
@@ -21,6 +22,21 @@
                 <tr>
                     <td th:text="${resultMap.MEMBER_ID}"></td>
                     <td th:text="${resultMap.NAME}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>List</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>아이디</th>
+                    <th>이름</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="resultData : ${resultList}">
+                    <td th:text="${resultData.MEMBER_ID}"></td>
+                    <td th:text="${resultData.NAME}"></td>
                 </tr>
             </tbody>
         </table>
