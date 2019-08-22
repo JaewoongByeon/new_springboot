@@ -10,6 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "STUDENT")
+@SuppressWarnings("serial")
 public class Student implements Serializable {
     @Id
     @GeneratedValue
