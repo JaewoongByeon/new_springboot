@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<body>
+    <h2>기본 레이아웃</h2>
+    <th:block layout:fragment="layout.content"></th:block>
+    <th:block th:replace="fragment/commonFooter :: commonFooter02"></th:block>
+</body>
+
+</html>
