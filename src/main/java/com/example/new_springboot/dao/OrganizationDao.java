@@ -13,4 +13,9 @@ public class OrganizationDao {
         Object result = sqlSession.selectList(sqlMapId, dataMap);
         return result;
     }
+
+    public Object getObject(String sqlMapId, Object dataMap) {
+        Object result = sqlSession.selectOne(sqlMapId, dataMap);
+        return result;
+    }
 }

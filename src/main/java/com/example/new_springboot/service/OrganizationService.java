@@ -10,8 +10,15 @@ public class OrganizationService {
     @Autowired
     private OrganizationDao dao;
 
-    public Object getList(String sqlMapId, Object dataMap) {
+    public Object getList(Object dataMap) {
+        String sqlMapId = "organization.list";
         Object result = dao.getList(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object getObject(Object dataMap) {
+        String sqlMapId = "organization.read";
+        Object result = dao.getObject(sqlMapId, dataMap);
         return result;
     }
 }

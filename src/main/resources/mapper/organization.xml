@@ -9,6 +9,10 @@
 	SELECT * FROM CIP_ORGANIZATION
 	</select>
 
+	<select id="read" resultType="Map" parameterType="Map">
+	SELECT * FROM CIP_ORGANIZATION WHERE ORGANIZATION_SEQ = #{ORGANIZATION_SEQ}
+	</select>
+
 	<insert id="merge" parameterType="Map">
 
 	</insert>

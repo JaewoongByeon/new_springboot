@@ -25,12 +25,15 @@ public class OrganizationController {
     public ModelAndView actionMethod(@RequestParam Map<String, Object> paramMap, @PathVariable String action,
             ModelAndView modelAndView) {
         String viewName = "/organization/";
-        Object result = new Object();
         if ("list".equals(action)) {
             viewName = viewName + action;
-            result = service.getList("organization.list", paramMap);
             modelAndView.setViewName(viewName);
-            modelAndView.addObject("resultList", result);
+            Object result01 = new Object();
+            result01 = service.getList(paramMap);
+            modelAndView.addObject("resultList", result01);
+            Object result02 = new Object();
+            result02 = service.getObject(paramMap);
+            modelAndView.addObject("resultOne", result02);
         }
         return modelAndView;
     }

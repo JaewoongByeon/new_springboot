@@ -20,6 +20,39 @@
                 </tr>
             </thead>
             <tbody>
+                <tr>
+                    <td>
+                        <form action="./list.html" th:action="@{/organization/list}">
+                            <div class="form-group form-inline">
+                                <select class="custom-select" name="ORGANIZATION_SEQ">
+                                    <option th:each="resultData : ${resultList}"
+                                        th:text="${resultData.ORGANIZATION_SEQ}"
+                                        th:value="${resultData.ORGANIZATION_SEQ}">
+                                    </option>
+                                </select>
+                                <button class="btn btn-outline-dark" type="submit">
+                                    View
+                                </button>
+
+                            </div>
+                        </form>
+                    </td>
+                    <td th:unless="${resultOne==null}" th:text="${resultOne.NAME}"></td>
+                    <td th:unless="${resultOne==null}" th:text="${resultOne.TELEPHONE}"></td>
+                    <td th:unless="${resultOne==null}" th:text="${resultOne.ORDER_NUMBER}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ORGANIZATION_SEQ</th>
+                    <th>NAME</th>
+                    <th>TELEPHONE</th>
+                    <th>ORDER_NUMBER</th>
+                </tr>
+            </thead>
+            <tbody>
                 <tr th:each="resultData: ${resultList}">
                     <td th:text="${resultData.ORGANIZATION_SEQ}"></td>
                     <td th:text="${resultData.NAME}"></td>
